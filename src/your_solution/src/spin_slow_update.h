@@ -9,6 +9,10 @@ class SlowSolution : public rclcpp::Node {
  public:
   SlowSolution();
  private:
+ rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr subscription_;
+
+    void topic_callback(const std_msgs::msg::Float64MultiArray::SharedPtr msg) const;
+    
   // your code here
 };
 
